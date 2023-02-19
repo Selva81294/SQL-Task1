@@ -1,0 +1,43 @@
+-- create a table
+CREATE TABLE Movies (
+  id INTEGER PRIMARY KEY,
+  title TEXT,
+  director TEXT,
+  producer TEXT,
+  genre TEXT
+);
+CREATE TABLE Reviews (
+  Review_id INTEGER PRIMARY KEY,
+  user_1 TEXT NOT NULL,
+  user_2 TEXT NOT NULL,
+  user_3 TEXT NOT NULL,
+  user_4 TEXT NOT NULL
+);
+CREATE TABLE Artists (
+  Artist_id INTEGER PRIMARY KEY,
+  Hero TEXT NOT NULL,
+  Heroin TEXT NOT NULL,
+  Villan TEXT NOT NULL,
+  Comedian TEXT NOT NULL
+);
+-- insert some values
+INSERT INTO Movies VALUES (1, 'Mov1', 'Mov1_dir', 'Mov1_prod', 'thriller');
+INSERT INTO Movies VALUES (2, 'Mov2', 'Mov2_dir', 'Mov2_prod', 'romantic');
+INSERT INTO Movies VALUES (3, 'Mov3', 'Mov3_dir', 'Mov3_prod', 'horror');
+INSERT INTO Movies VALUES (4, 'Mov4', 'Mov4_dir', 'Mov4_prod', 'comedy');
+
+INSERT INTO Reviews VALUES (1, 'Good', 'Bad', 'Average', 'Super');
+INSERT INTO Reviews VALUES (2, 'Average', 'Bad', 'Super', 'Good');
+INSERT INTO Reviews VALUES (3, 'Good', 'Super', 'Average', 'Super');
+INSERT INTO Reviews VALUES (4, 'Average', 'Good', 'Bad', 'Average');
+
+INSERT INTO Artists VALUES (1, 'Hero_Name', 'Heroin_Name', 'Villan_Name', 'Comedian_Name');
+INSERT INTO Artists VALUES (2, 'Hero_Name', 'Heroin_Name', 'Villan_Name', 'Comedian_Name');
+INSERT INTO Artists VALUES (3, 'Hero_Name', 'Heroin_Name', 'Villan_Name', 'Comedian_Name');
+INSERT INTO Artists VALUES (4, 'Hero_Name', 'Heroin_Name', 'Villan_Name', 'Comedian_Name');
+
+-- fetch some values
+-- example output
+SELECT title, user_2 FROM Movies
+join Reviews
+where id = Review_id
